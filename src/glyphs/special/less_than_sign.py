@@ -8,14 +8,14 @@ class LessThenSignGlyph(Glyph):
     offset = 0
     width_ratio = 1
     overlap = 0.6
-    span = 0.85
+    span = 0.5
     stroke_ratio = 1.2
 
     def draw(self, pen, dc):
         b = dc.body_bounds(
             offset=self.offset, height="x_height", width_ratio=self.width_ratio
         )
-        ymid = dc.math
+        ymid = dc.math - 30
         h = dc.parenthesis_length * self.span
         s = dc.stroke_x * self.stroke_ratio
         draw_parallelogramm(
